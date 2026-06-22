@@ -45,7 +45,7 @@ Este projeto utiliza o Firebase para:
 ## 📦 Como rodar o projeto
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
+git clone https://github.com/OuranN/GR_GameStation.git
 cd nome-do-projeto
 npm install
 ng serve
