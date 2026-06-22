@@ -1,0 +1,14 @@
+<div class="center">
+  <section class="catalog">
+      <div class="filters" role="tablist">
+        <button class="filter" (click)="onApplyFilter('all')" [class.active]="selectedPlatformFilter()==='all'">TODOS</button>
+        <button class="filter" (click)="onApplyFilter('PS5')" [class.active]="selectedPlatformFilter()==='PS5'">PS5</button>
+        <button class="filter" (click)="onApplyFilter('PS4')" [class.active]="selectedPlatformFilter()==='PS4'">PS4</button>
+        <button class="filter" (click)="onApplyFilter('PS3')" [class.active]="selectedPlatformFilter()==='PS3'">PS3</button>
+        <button class="filter" (click)="onApplyFilter('XBOX SERIES X')" [class.active]="selectedPlatformFilter()==='XBOX SERIES X'">XBOX SERIES X</button>
+        <button class="filter" (click)="onApplyFilter('XBOX SERIES S')" [class.active]="selectedPlatformFilter()==='XBOX SERIES S'">XBOX SERIES S</button>
+        <button class="filter" (click)="onApplyFilter('SWITCH')" [class.active]="selectedPlatformFilter()==='SWITCH'">SWITCH</button>
+        <button class="filter" (click)="onApplyFilter('SWITCH2')" [class.active]="selectedPlatformFilter()==='SWITCH2'">SWITCH2</button>
+      </div>
+    </section>
+</div>

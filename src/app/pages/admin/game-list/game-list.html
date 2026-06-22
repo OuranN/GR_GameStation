@@ -1,0 +1,4 @@
+<h2>JOGOS CADASTRADOS ({{nJogos()}})</h2>
+@for (game of games(); track game.id) {
+  <app-game-item [game]="game" (editGame)="onEditGame($event)" [selected]= "selectedGame()===game"></app-game-item>
+}

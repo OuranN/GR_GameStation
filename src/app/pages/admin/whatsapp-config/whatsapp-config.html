@@ -1,0 +1,55 @@
+<div class="whatsapp-card">
+
+  <h2>NÚMERO DO WHATSAPP</h2>
+
+  <p class="description">
+    Use DDD, somente dígitos. Ex: 77912345678
+  </p>
+
+  <form (ngSubmit)="onSubmit()" class="form-row" [formGroup]="form">
+
+    <input
+      type="number"
+      placeholder="77999999999"
+      class="input-number"
+      formControlName="whatsappNumber"
+    >
+
+    <button class="save-button" type="submit">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+        <polyline points="17 21 17 13 7 13 7 21"/>
+        <polyline points="7 3 7 8 15 8"/>
+      </svg>
+
+      Salvar
+    </button>
+  </form>
+  
+  @if (successMessage()) {
+  <span class="success-message">
+    Número salvo com sucesso!
+  </span>
+  }
+  @if (form.get('whatsappNumber')?.invalid &&
+     form.get('whatsappNumber')?.dirty) {
+
+  <span class="error">
+    O número deve conter exatamente 11 dígitos.
+  </span>
+
+}
+
+    
+
+
+
+</div>

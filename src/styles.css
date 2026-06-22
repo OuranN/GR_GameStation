@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300..700&display=swap');
+
+:root {
+  --bg: #0a0a0f;
+  --bg-2: #11131a;
+  --surface: #161922;
+  --surface-2: #1c2030;
+  --border: #262a3a;
+  --text: #f5f6fa;
+  --muted: #8b8fa3;
+  --primary: #ff5722;
+  --primary-hover: #ff6a3d;
+  --accent-blue: #3b82f6;
+  --radius: 12px;
+  --shadow-glow: 0 0 40px rgba(255, 87, 34, 0.25);
+  --font-family2: "Rajdhani", sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* Para navegadores baseados em Chromium (Chrome, Edge, Opera, Safari) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Para o Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+}

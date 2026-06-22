@@ -1,0 +1,37 @@
+main{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.inputs{
+  display: flex;
+  flex-direction: column;
+  top: 10px;
+  gap: 20px;
+}
+
+.list{
+  width: 100%;
+}
+
+.content{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+
+  width: 70%;
+}
+
+@media (max-width: 768px) {
+
+  .content{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+  }
+}

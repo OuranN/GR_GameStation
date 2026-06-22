@@ -1,0 +1,136 @@
+<aside class="cart-card order cart-desktop">
+      <div class="cart-head">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon" aria-hidden="true">
+          <circle cx="8" cy="21" r="1"></circle>
+          <circle cx="19" cy="21" r="1"></circle>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+        </svg>
+        <h2>SEU PEDIDO</h2>
+      </div>
+      <div class="cart-body" id="cart">
+        <div class="cart-empty">
+          @if (order().length>0) {
+            @for (game of order(); track game.id) {
+              <app-cart-item [game]="game" (removeItem)="removingItem($event)"></app-cart-item>
+            }
+          } @else {
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="empty-cart" >
+              <circle cx="8" cy="21" r="1"></circle>
+              <circle cx="19" cy="21" r="1"></circle>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+            <p>Selecione os jogos que você quer e eles aparecerão aqui.</p>
+          }
+            
+          
+        </div>
+      </div>
+      <div class="cart-footer" id="cart-footer">
+        @if (order().length>0) {
+          <div class="cart-total">
+            <span>Total</span>
+            <strong id="total">{{total() | currency:'BRL'}}</strong>
+          </div>
+          <div class="div-button">
+            <button d="whatsapp-btn" class="btn btn-primary btn-block" (click)="sendMensage()">FINALIZAR NO WHATSAPP</button>
+            
+          </div>
+        }
+        
+        
+      </div>
+</aside>
+
+@if (!isModalOpen()) {
+  <aside class="cart-mobile">
+    <div class="cart-bar">
+      <div class="cart-info">
+        <div class="cart-icon-mobile" (click)="openModal()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 4H5L7.5 15H18.5L21 7H8"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="9" cy="19" r="1.5" fill="currentColor"/>
+            <circle cx="18" cy="19" r="1.5" fill="currentColor"/>
+          </svg>
+
+          <span class="badge">{{order().length}}</span>
+        </div>
+
+        <div class="cart-text">
+          <span class="label">TOTAL</span>
+          <span class="price">{{total() | currency: 'BRL'}}</span>
+        </div>
+      </div>
+
+      <button class="whatsapp-btn" (click)="sendMensage()">
+        ENVIAR NO WHATSAPP
+      </button>
+    </div>
+  </aside>
+} @else {
+    <div class="overlay ">
+    <aside class="modal  cart-desktop">
+          <div class="cart-head">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon" aria-hidden="true">
+              <circle cx="8" cy="21" r="1"></circle>
+              <circle cx="19" cy="21" r="1"></circle>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+            <h2>SEU PEDIDO</h2>
+            <div (click)="closeModal()" class="close-modal">
+              <h2 >X</h2>
+            </div>
+            
+          </div>
+          <div class="cart-body" id="cart">
+            <div class="cart-empty">
+              @if (order().length>0) {
+                @for (game of order(); track game.id) {
+                  <app-cart-item [game]="game" (removeItem)="removingItem($event)"></app-cart-item>
+                }
+              } @else {
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="empty-cart" >
+                  <circle cx="8" cy="21" r="1"></circle>
+                  <circle cx="19" cy="21" r="1"></circle>
+                  <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+                </svg>
+                <p>Selecione os jogos que você quer e eles aparecerão aqui.</p>
+              }
+                
+              
+            </div>
+          </div>
+          <div class="cart-footer" id="cart-footer">
+            @if (order().length>0) {
+              <div class="cart-total">
+                <span>Total</span>
+                <strong id="total">{{total() | currency:'BRL'}}</strong>
+              </div>
+              <div class="div-button">
+                <button d="whatsapp-btn" class="btn btn-primary btn-block" (click)="sendMensage()">FINALIZAR NO WHATSAPP</button>
+                
+              </div>
+            }
+            
+            
+          </div>
+    </aside>
+  </div>
+}
+
+
+
+
+
+

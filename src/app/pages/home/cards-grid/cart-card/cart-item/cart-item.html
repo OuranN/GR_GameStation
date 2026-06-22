@@ -1,0 +1,15 @@
+<div class="cart-item">
+  <div class="cart-info">
+    <app-platform-tag [platformTag]="game().plataforma.toLowerCase()"></app-platform-tag>
+    <h3 class="game-name">{{game().nome}}</h3>
+    
+  </div>
+
+  <div class="cart-actions">
+    <span class="price">{{game().preco | currency: 'BRL'}}</span>
+
+    <button class="remove-btn" aria-label="Remover item" (click)="removingItem()">
+      🗑
+    </button>
+  </div>
+</div>

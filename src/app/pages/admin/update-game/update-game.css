@@ -1,0 +1,151 @@
+.add-game-card{
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 350px;
+    font-family: var(--font-family2);
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.add-game-card h2{
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+}
+.form-group label{
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.form-group input{
+
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    
+}
+
+.form-group input:focus{
+    outline: none;
+    border-color: #ff5b2e;
+}
+
+.options-row{
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.option-btn{
+    background: transparent;
+    border: 1px solid #2b3444;
+    color: #7d8ca8;
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.option-btn:hover{
+    border-color: #ff5b2e;
+}
+
+.option-btn.active{
+    background: #ff5b2e;
+    color: black;
+    border-color: #ff5b2e;
+}
+
+.price-stock{
+    display: flex;
+    gap: 20px;
+}
+
+
+
+.salvar-button{
+    border: none;
+    background: var(--primary);
+    color: black;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: .2s;
+    font-family: var(--font-family2);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-family2);
+}
+
+.salvar-button:hover{
+    background: #ff6b42;
+}
+
+.add-button span{
+    font-size: 24px;
+}
+
+img{
+    margin-bottom: 20px;
+    
+}
+
+.buttons{
+  display: flex;
+  gap: 10px;
+ 
+}
+
+.cancel-button{
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: var(--font-family2);
+
+}
+
+.cancel-button:hover{
+  background-color: rgb(17, 17, 17);
+  cursor: pointer;
+}
+
+
+.platform-group{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.img-preview{
+    width: 10em;  
+}

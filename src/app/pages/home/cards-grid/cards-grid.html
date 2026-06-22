@@ -1,0 +1,23 @@
+
+<div class="center">
+  <div class="cards_order">
+
+      <div class="grid">
+        <app-filter (platformFilter)="setPlatformFilter($event)"></app-filter>
+            <div class="game-list">
+              @for (game of gamesFiltrados(); track game.id) {
+              @if (game.estoque>0) {            
+                <app-card-item [game]="game" (addGameOrder)="addToCart($event)" [isInCart]="order().includes(game)"></app-card-item>
+               }
+              }
+            </div>
+
+
+
+
+      </div>
+
+    <app-cart-card [order]="order()" (orderDone)="cleanCart()" (removeItem)="removeToCart($event)" ></app-cart-card>
+  </div>
+
+</div>

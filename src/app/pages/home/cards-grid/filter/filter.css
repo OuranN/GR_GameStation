@@ -1,0 +1,26 @@
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; 
+
+}
+.filter {
+  padding: 7px 12px; 
+  border-radius: 4px;
+  background: var(--surface); 
+  color: var(--muted);
+  border: 1px solid var(--border); cursor: pointer;
+  font-weight: 700; font-size: 12px; letter-spacing: 1px;
+  transition: all 0.2s;
+  font-family: var(--font-family2);
+  font-weight: bolder;
+}
+
+.filter:hover { color: var(--text); border-color: var(--primary); }
+
+.filter.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+
+
+.catalog{
+  display: flex;
+  align-items: start;
+
+}

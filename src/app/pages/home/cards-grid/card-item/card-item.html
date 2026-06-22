@@ -1,0 +1,28 @@
+<div class="game-card" (click)="toggleGameCart()">
+  <div class="card-header">
+    <app-platform-tag [platformTag]="game().plataforma"></app-platform-tag>
+    @if(isInCart()){
+      <button class="btn-added">✔</button>
+    }@else {
+      <button class="btn-add" >+</button>
+    }
+    
+  </div>
+
+  <div class="image-container">
+    <img [src]="game().imagem" alt="God of War Ragnarök">
+  </div>
+
+  <div class="card-footer">
+    <h3 class="game-title">{{game().nome}}</h3>
+    <span class="game-status">{{game().status}}</span>
+    
+    <div class="price-stock-container">
+      <span class="game-price">
+        {{ game().preco | currency:'BRL' }}
+      </span>
+      <span class="game-stock">{{game().estoque}} DISPONÍVEL</span>
+    </div>
+  </div>
+</div>
+

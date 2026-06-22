@@ -1,0 +1,27 @@
+.platform-tag{
+    border: 1px solid;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 10px;
+    font-weight: 700;
+
+}
+
+.ps{
+    background-color: #1a2c4c;
+    border-color: #2563eb;
+    color: #3b82f6;
+}
+
+.nitendo{
+    background-color: #E60012;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.xbox{
+    background-color: #107C10;
+    border-color: #16d616;
+    color: #ffffff;
+}
+

@@ -1,0 +1,9 @@
+<div 
+    class="platform-tag" 
+    class="platform-tag"
+    [class.ps]="['ps4', 'ps5', 'ps3'].includes(platformTag().toLowerCase())"
+    [class.xbox]="['xbox', 'xbox series x', 'xbox series s', 'xbox one'].includes(platformTag().toLowerCase())"
+    [class.nitendo]="['switch', 'switch 2'].includes(platformTag().toLowerCase())">
+
+    {{platformTag().toUpperCase()}}
+</div>

@@ -1,0 +1,23 @@
+
+
+<main>
+  <div class="content">
+    <div class="inputs">
+      <app-whatsapp-config></app-whatsapp-config>
+      @if(isEditGame()){
+        <app-update-game [game]="gameEdit()" (onFinishEditGame)="unsetIsEditGame()"></app-update-game>
+      } @else {
+        <app-add-game></app-add-game>
+      }
+      
+      
+    </div>
+  
+    <div class="list">
+      <app-game-list (editGame)="onEditGame($event)" [selectedGame]="gameEdit()" ></app-game-list>
+    </div>
+  </div>
+
+
+
+</main>

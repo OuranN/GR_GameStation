@@ -1,0 +1,42 @@
+.grid{
+    display: flex;
+    flex-direction: column;
+
+    width: fit-content;
+    
+
+}
+
+.game-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+ 
+  
+}
+
+.cards_order{
+  display: flex;
+  
+
+  gap: 2em;
+  margin: 0.5em;
+
+  
+}
+
+
+
+
+
+
+
+
