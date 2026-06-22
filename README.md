@@ -29,8 +29,10 @@ Este projeto utiliza o Firebase para:
 ### Home Page Mobile 📱
 <img src="./readme_images/home-page-mobile.png" alt="Print da home page mobile" height="400"> <img src="./readme_images/home-page-mobile2.png" alt="Print da home page mobile" height="400"> <img src="./readme_images/home-page-mobile-carrinho.png" alt="Print da home page mobile" height="400">
 
-### Login
-<img src="./readme_images/login-page.png" alt="Print da tela de login desktop" width="750"> <img src="./readme_images/login-mobile.png" alt="Print da tela de login mobile" width="230">
+### Login Desktop 🖥️
+<img src="./readme_images/login-page.png" alt="Print da tela de login desktop" width="750"> 
+### Login Mobile 📱
+<img src="./readme_images/login-mobile.png" alt="Print da tela de login mobile" height="400">
 
 ### Admin Desktop 🖥️
 <img src="./readme_images/admin-page.png" alt="Print do Sistema" width="500"> 
