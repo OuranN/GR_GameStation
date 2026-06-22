@@ -1,61 +1,48 @@
-# GrGameStation
+# GR GameStation
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
+Aplicação web desenvolvida em Angular para gerenciamento de uma loja de jogos, com integração ao Firebase para autenticação e armazenamento de dados.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Tecnologias utilizadas
+- Angular
+- TypeScript
+- HTML5
+- CSS3
+- Firebase (Authentication / Firestore / Hosting)
+
+---
+
+## 🔥 Firebase
+Este projeto utiliza o Firebase para:
+- Autenticação de usuários
+- Armazenamento de dados (Firestore)
+- (Opcional) Hospedagem da aplicação
+  
+---
+## 📸 Preview
+
+### Home Page Desktop 🖥️
+<img src="./readme_images/home-page.png" alt="Print da home page desktop" width="1000">
+<img src="./readme_images/home-page2.png" alt="Print da home page desktop" width="1000">
+
+### Home Page Mobile 📱
+<img src="./readme_images/home-page-mobile.png" alt="Print da home page mobile" height="400"> <img src="./readme_images/home-page-mobile2.png" alt="Print da home page mobile" height="400"> <img src="./readme_images/home-page-mobile-carrinho.png" alt="Print da home page mobile" height="400">
+
+### Login
+<img src="./readme_images/login-page.png" alt="Print da tela de login desktop" width="750"> <img src="./readme_images/login-mobile.png" alt="Print da tela de login mobile" width="230">
+
+### Admin Desktop 🖥️
+<img src="./readme_images/admin-page.png" alt="Print do Sistema" width="500"> 
+
+### Admin  Mobile 📱
+<img src="./readme_images/admin-page-mobile.png" alt="Print do Sistema" height="400"> <img src="./readme_images/add-game-mobile.png" alt="Print do Sistema" height="400"> <img src="./readme_images/jogos-cadastrados-mobile.png" alt="Print do Sistema" height="400">
+
+
+## 📦 Como rodar o projeto
 
 ```bash
+git clone https://github.com/seu-usuario/seu-repo.git
+cd nome-do-projeto
+npm install
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# GR_GameStation
-Aplicação web desenvolvida com Angular para gerenciamento de jogos / loja de games usados.
