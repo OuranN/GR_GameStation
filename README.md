@@ -31,6 +31,7 @@ Este projeto utiliza o Firebase para:
 
 ### Login Desktop 🖥️
 <img src="./readme_images/login-page.png" alt="Print da tela de login desktop" width="750"> 
+
 ### Login Mobile 📱
 <img src="./readme_images/login-mobile.png" alt="Print da tela de login mobile" height="400">
 
