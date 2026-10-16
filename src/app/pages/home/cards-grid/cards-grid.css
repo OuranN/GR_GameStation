@@ -1,42 +1,74 @@
-.grid{
-    display: flex;
-    flex-direction: column;
-
-    width: fit-content;
-    
-
-}
-
-.game-list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
-.center{
+.center {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 2em;
- 
-  
+  width: 100%;
 }
 
-.cards_order{
+.cards_order {
   display: flex;
-  
-
+  justify-content: center;
+  align-items: flex-start;
   gap: 2em;
-  margin: 0.5em;
-
-  
+  margin: 0.5em auto;
+  width: 100%;
+  max-width: 1480px;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
+.grid {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 1035px;
+  min-width: 0;
+  width: 100%;
+}
 
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  gap: 25px;
+  min-height: 25em;
+  width: 100%;
+}
 
+.no-games-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  width: 100%;
+  min-height: 25em;
+  color: var(--muted);
+  font-family: var(--font-family2);
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background: rgba(22, 25, 34, 0.4);
+  box-sizing: border-box;
+}
 
+@media (max-width: 768px) {
+  .cards_order {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    padding: 0 0.5rem;
+  }
 
+  .grid {
+    align-items: center;
+    max-width: 100%;
+  }
 
-
-
+  .game-list {
+    justify-content: center;
+  }
+}

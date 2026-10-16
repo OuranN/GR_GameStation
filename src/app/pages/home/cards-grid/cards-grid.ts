@@ -16,18 +16,30 @@ export class CardsGrid implements OnInit {
   games = signal<Game[]>([])
   order = signal<Game[]>([]);
   plataformaFiltro = signal('');
+  searchTerm = signal('');
 
   gamesFiltrados = computed(() => {
+    const termo = this.searchTerm().trim().toLowerCase();
+    const plataforma = this.plataformaFiltro().toLowerCase();
+
     return this.games().filter(game => {
       const plataformaValida =
-        !this.plataformaFiltro() || this.plataformaFiltro().toLowerCase() ==='all' || game.plataforma.toLowerCase() === this.plataformaFiltro().toLowerCase();
+        !plataforma ||
+        plataforma === 'all' ||
+        game.plataforma.toLowerCase() === plataforma;
 
-      return plataformaValida;
+      const nomeValido = !termo || game.nome.toLowerCase().includes(termo);
+
+      return plataformaValida && nomeValido;
     });
   });
 
-  setPlatformFilter(platform:string){
-    this.plataformaFiltro.set(platform)
+  setPlatformFilter(platform: string) {
+    this.plataformaFiltro.set(platform);
+  }
+
+  setSearchTerm(term: string) {
+    this.searchTerm.set(term);
   }
 
   addToCart(game:Game){

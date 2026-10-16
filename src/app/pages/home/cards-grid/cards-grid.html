@@ -3,18 +3,21 @@
   <div class="cards_order">
 
       <div class="grid">
-        <app-filter (platformFilter)="setPlatformFilter($event)"></app-filter>
-            <div class="game-list">
-              @for (game of gamesFiltrados(); track game.id) {
-              @if (game.estoque>0) {            
-                <app-card-item [game]="game" (addGameOrder)="addToCart($event)" [isInCart]="order().includes(game)"></app-card-item>
-               }
-              }
+        <app-filter
+          (platformFilter)="setPlatformFilter($event)"
+          (searchTerm)="setSearchTerm($event)"
+        ></app-filter>
+        <div class="game-list">
+          @for (game of gamesFiltrados(); track game.id) {
+            @if (game.estoque>0) {            
+              <app-card-item [game]="game" (addGameOrder)="addToCart($event)" [isInCart]="order().includes(game)"></app-card-item>
+            }
+          } @empty {
+            <div class="no-games-found">
+              <p>Nenhum jogo encontrado para a busca realizada.</p>
             </div>
-
-
-
-
+          }
+        </div>
       </div>
 
     <app-cart-card [order]="order()" (orderDone)="cleanCart()" (removeItem)="removeToCart($event)" ></app-cart-card>
