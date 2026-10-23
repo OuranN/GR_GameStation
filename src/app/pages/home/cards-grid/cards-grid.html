@@ -7,17 +7,58 @@
           (platformFilter)="setPlatformFilter($event)"
           (searchTerm)="setSearchTerm($event)"
         ></app-filter>
+
         <div class="game-list">
-          @for (game of gamesFiltrados(); track game.id) {
-            @if (game.estoque>0) {            
-              <app-card-item [game]="game" (addGameOrder)="addToCart($event)" [isInCart]="order().includes(game)"></app-card-item>
-            }
-          } @empty {
-            <div class="no-games-found">
-              <p>Nenhum jogo encontrado para a busca realizada.</p>
+          @if (isLoading()) {
+            <div class="loading-state">
+              <div class="spinner"></div>
+              <p>Carregando jogos...</p>
             </div>
+          } @else {
+            @for (game of displayedGames(); track game.id) {
+              @if (game.estoque > 0) {
+                <app-card-item [game]="game" (addGameOrder)="addToCart($event)" [isInCart]="order().includes(game)"></app-card-item>
+              }
+            } @empty {
+              <div class="no-games-found">
+                <p>Nenhum jogo encontrado para a busca realizada.</p>
+              </div>
+            }
           }
         </div>
+
+        <!-- Paginação -->
+        @if (!isLoading() && totalPages() > 1) {
+          <nav class="pagination" aria-label="Paginação de jogos">
+            <button
+              class="page-btn nav-btn"
+              [disabled]="currentPage() === 1"
+              (click)="prevPage()"
+              aria-label="Página anterior"
+            >&#8249;</button>
+
+            @for (page of pages(); track $index) {
+              @if (page === 0) {
+                <span class="page-ellipsis">&#8230;</span>
+              } @else {
+                <button
+                  class="page-btn"
+                  [class.active]="page === currentPage()"
+                  (click)="goToPage(page)"
+                  [attr.aria-label]="'Página ' + page"
+                  [attr.aria-current]="page === currentPage() ? 'page' : null"
+                >{{ page }}</button>
+              }
+            }
+
+            <button
+              class="page-btn nav-btn"
+              [disabled]="currentPage() === totalPages()"
+              (click)="nextPage()"
+              aria-label="Próxima página"
+            >&#8250;</button>
+          </nav>
+        }
       </div>
 
     <app-cart-card [order]="order()" (orderDone)="cleanCart()" (removeItem)="removeToCart($event)" ></app-cart-card>
