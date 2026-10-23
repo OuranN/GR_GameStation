@@ -1,14 +1,32 @@
-<div class="center">
+<div class="filter-wrapper">
   <section class="catalog">
-      <div class="filters" role="tablist">
-        <button class="filter" (click)="onApplyFilter('all')" [class.active]="selectedPlatformFilter()==='all'">TODOS</button>
-        <button class="filter" (click)="onApplyFilter('PS5')" [class.active]="selectedPlatformFilter()==='PS5'">PS5</button>
-        <button class="filter" (click)="onApplyFilter('PS4')" [class.active]="selectedPlatformFilter()==='PS4'">PS4</button>
-        <button class="filter" (click)="onApplyFilter('PS3')" [class.active]="selectedPlatformFilter()==='PS3'">PS3</button>
-        <button class="filter" (click)="onApplyFilter('XBOX SERIES X')" [class.active]="selectedPlatformFilter()==='XBOX SERIES X'">XBOX SERIES X</button>
-        <button class="filter" (click)="onApplyFilter('XBOX SERIES S')" [class.active]="selectedPlatformFilter()==='XBOX SERIES S'">XBOX SERIES S</button>
-        <button class="filter" (click)="onApplyFilter('SWITCH')" [class.active]="selectedPlatformFilter()==='SWITCH'">SWITCH</button>
-        <button class="filter" (click)="onApplyFilter('SWITCH2')" [class.active]="selectedPlatformFilter()==='SWITCH2'">SWITCH2</button>
-      </div>
-    </section>
+    <div class="search-box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input
+        type="text"
+        placeholder="Buscar por nome do jogo..."
+        [value]="searchValue()"
+        (input)="onSearchInput($event)"
+        class="search-input"
+        aria-label="Buscar jogo por nome"
+      />
+      @if (searchValue()) {
+        <button type="button" class="clear-search-btn" (click)="clearSearch()" aria-label="Limpar busca">✕</button>
+      }
+    </div>
+
+    <div class="filters" role="tablist">
+      <button class="filter" (click)="onApplyFilter('all')" [class.active]="selectedPlatformFilter()==='all'">TODOS</button>
+      <button class="filter" (click)="onApplyFilter('PS5')" [class.active]="selectedPlatformFilter()==='PS5'">PS5</button>
+      <button class="filter" (click)="onApplyFilter('PS4')" [class.active]="selectedPlatformFilter()==='PS4'">PS4</button>
+      <button class="filter" (click)="onApplyFilter('PS3')" [class.active]="selectedPlatformFilter()==='PS3'">PS3</button>
+      <button class="filter" (click)="onApplyFilter('XBOX SERIES X')" [class.active]="selectedPlatformFilter()==='XBOX SERIES X'">XBOX SERIES X</button>
+      <button class="filter" (click)="onApplyFilter('XBOX SERIES S')" [class.active]="selectedPlatformFilter()==='XBOX SERIES S'">XBOX SERIES S</button>
+      <button class="filter" (click)="onApplyFilter('SWITCH')" [class.active]="selectedPlatformFilter()==='SWITCH'">SWITCH</button>
+      <button class="filter" (click)="onApplyFilter('SWITCH2')" [class.active]="selectedPlatformFilter()==='SWITCH2'">SWITCH2</button>
+    </div>
+  </section>
 </div>
