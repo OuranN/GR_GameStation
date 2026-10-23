@@ -7,11 +7,24 @@ import {
   getDocs,
   updateDoc,
   doc,
-  onSnapshot
+  onSnapshot,
+  query,
+  orderBy,
+  limit,
+  startAfter,
+  getCountFromServer,
+  QueryDocumentSnapshot,
+  DocumentData
 } from 'firebase/firestore';
 
 import { firebaseApp } from '../../../firebase.config';
 import { Game } from '../../models/game';
+
+export interface PaginatedGames {
+  games: Game[];
+  lastDoc: QueryDocumentSnapshot<DocumentData> | null;
+  total: number;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -74,6 +87,36 @@ export class GameService {
       id: doc.id,
       ...doc.data()
     })) as Game[];
+  }
+
+  async getGamesPaginated(
+    pageSize: number,
+    lastVisible: QueryDocumentSnapshot<DocumentData> | null
+  ): Promise<PaginatedGames> {
+
+    const gamesCollection = collection(this.db, 'games');
+
+    // Obter total de documentos
+    const countSnap = await getCountFromServer(gamesCollection);
+    const total = countSnap.data().count;
+
+    // Montar query com ou sem cursor
+    const q = lastVisible
+      ? query(gamesCollection, orderBy('nome'), startAfter(lastVisible), limit(pageSize))
+      : query(gamesCollection, orderBy('nome'), limit(pageSize));
+
+    const snapshot = await getDocs(q);
+
+    const games = snapshot.docs.map(d => ({
+      id: d.id,
+      ...d.data()
+    })) as Game[];
+
+    const lastDoc = snapshot.docs.length > 0
+      ? snapshot.docs[snapshot.docs.length - 1]
+      : null;
+
+    return { games, lastDoc, total };
   }
 
   listenGames(callback: (games: Game[]) => void) {
